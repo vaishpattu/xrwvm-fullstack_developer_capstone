@@ -17,12 +17,13 @@ from .models import CarMake, CarModel
 
 class CarModelInline(admin.StackedInline):
     model = CarModel
-    extra = 3  # Number of empty forms to display
+    #extra = 3  # Number of empty forms to display
 
 class CarMakeAdmin(admin.ModelAdmin):
     inlines = [CarModelInline]
-    list_display = ('name', 'founded_year', 'headquarters')
-    list_filter = ['founded_year']
+    list_display = ('name', 'description')
+    #list_display = ('name', 'founded_year', 'headquarters')
+    #list_filter = ['founded_year']
     search_fields = ['name', 'description']
 
 class CarModelAdmin(admin.ModelAdmin):
